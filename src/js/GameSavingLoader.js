@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 
 import read from './reader';
 import json from './parser';
@@ -12,13 +12,11 @@ export default class GameSavingLoader {
           try {
             resolve(JSON.parse(result));
           } catch (error) {
-            // console.error(`Неверный формат JSON. ${error}`);
+            reject(error);
           }
         }).catch((error) => {
-          // console.error(error);
         });
       }).catch((error) => {
-        // console.error(error);
       });
     });
   }
